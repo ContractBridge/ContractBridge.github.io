@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>My Awesome Presentation</title>
+    <title>Restoring Heritage Code Bases</title>
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
     <style type="text/css">
       @import url(https://fonts.googleapis.com/css?family=Yanone+Kaffeesatz);
@@ -37,9 +37,15 @@ Christoph
 
 ---
 
-# Be afraid. Be very afraid
+# Why?
 
-_Welcome to my brain._
+---
+
+# Welcome to my brain
+
+.left[![Right-aligned image](images/junkyard.jpg)]
+
+_Be afraid. Be very afraid._
 
 ---
 
@@ -47,21 +53,129 @@ _Welcome to my brain._
 
 ## Controllability and Observability
 
-> Observability is the mathematical dual of controllability.
+> _Like so many other terms in software engineering, “observability” is a term borrowed from an older physical discipline: in this case, control systems engineering. **Observability is the mathematical dual of controllability**._
 
--- Charity Majors, CTO honeycomb.io
+-- [Observability, A 3-Year Retrospective](https://thenewstack.io/observability-a-3-year-retrospective/) Charity Majors, CTO HoneyComb.io
 
-> Controllability is concerned with whether one can design control input to steer the state to arbitrarily
+> _Controllability is concerned with whether one can design control input to steer the state to arbitrarily
 > values. Observability is concerned with whether without knowing the initial state, one can determine the 
-> state of a system given the input and the output.
+> state of a system given the input and the output._
 
 -- [University of Minnesota course ME8281 – Advanced Control System Design](http://www.me.umn.edu/courses/me8281/)
 
 ---
 
-# Control Systems Engineering
+background-image: url(images/godmode.jpg)
 
+---
 
+# THE BAD NEWS: We are not gods 
+
+* Ininite amount of work.
+* Finite amount of time. 
+
+Prioritize for what delivers the most value.
+
+---
+
+# Plan of Attack
+
+* Isolate
+* How does it talk?
+* What does it do?
+
+---
+
+# Tools
+
+* CI
+* Unit Testing (Characterization Tests)
+* Logging
+* Exploratory Testing
+* Integration Testing
+
+---
+
+background-image: url(images/contractbridge.jpeg)
+
+# Introducing our Candidate
+
+---
+
+# The Software 
+
+* dds - Double Dummy Solver
+* Deal
+* Redeal
+* PbnJVeri
+
+[github.com/ContractBridge](https://github.com/ContractBridge)
+
+---
+
+# DDS - Double Dummy Solver
+
+* Written in C++
+* Shared Library
+* Powerful
+* Pain in the ass
+
+## Actions
+
+* Attempted to make
+* Added it to codeline
+* Tabled
+
+---
+
+# Deal
+
+* Wrapper around dds
+* Written in C
+* Scripting language in TCL
+
+## Actions
+
+* None.
+
+---
+
+# Redeal
+
+* Wrapper around dds
+* Written in Python
+
+## Actions
+
+* Created executable Dockerfile of codebase 
+* Writing scripts to execute scenarios
+
+---
+
+# PbnJVeri
+
+* Written in Java 
+* Validates and converts Portable Bridge Notation files
+* Command line and GUI binary
+
+## The Attack
+
+* Original Codebase
+  * Contacted author for permission and about license.
+  * Created GitHub project for original code.
+  * Put original code up on GitHub adding license and formatted README.md.
+  * Created a release tagged to the version with the original zip file.
+  * Created makefile on develop branch for easier running.
+* New Codebase
+  * Mavenized it.
+  * Installed google standard java code formatter.
+  * Created an initial test.
+  * Added it to CI.
+  * Added code coverage tool.
+
+---
+
+# Setting Goals and Priorities
 
     </textarea>
     <script type="text/javascript">
